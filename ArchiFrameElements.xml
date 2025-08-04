@@ -23339,6 +23339,11 @@ height=0.173
 	</elemtemplate>
 
 
+
+
+
+
+
       <elemtemplate class="layer" templateid="airstrips_hor_gable_10" templatename="Air space strips horizontal with angled parts" templatename_fin="Tuuletusrako vaaka vinoilla osilla" templatename_kor="각진 부분이 있는 환기 수평" templatename_pol="Poziome listwy wentylacyjne z ukośnymi elementami" id="[id]">
         <settings>
           <newelemplank>
@@ -30860,4 +30865,3 @@ end
   </elem>
 
 </archiframe>
-
