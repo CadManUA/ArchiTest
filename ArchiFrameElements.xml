@@ -23303,48 +23303,43 @@ height=0.173
       </elemtemplate>
 
 <!-- Делаю шаблон -->
-	<elemtemplate class="boarding" templateid="panel_with_gap" templatename="Панель с зазором" id="[id]">
+<elemtemplate class="boarding" templateid="panel_with_gap" templatename="Панель с зазором" id="[id]">
 
-		  <!-- Начальные значения параметров -->
-		  <settings>
-			<panelWidth>0.2</panelWidth>        <!-- Ширина панели в метрах -->
-			<gap>0.003</gap>                    <!-- Зазор между панелями -->
-			<startOffset>0.0</startOffset>      <!-- Смещение от начала -->
-		  </settings>
+  <settings>
+    <panelWidth>0.2</panelWidth>
+    <gap>0.003</gap>
+    <startOffset>0.05</startOffset>
+  </settings>
 
-		  <!-- Параметры, доступные в UI -->
-		  <options>
-			<group name="panelLayout">
-			  <option name="panelWidth" type="real" defvalue="0.2" prompt="Ширина панели (м)"/>
-			  <option name="gap" type="real" defvalue="0.003" prompt="Зазор между панелями (м)"/>
-			  <option name="startOffset" type="real" defvalue="0.0" prompt="Смещение от начала (м)"/>
-			</group>
-		  </options>
+  <options>
+    <group name="panelLayout">
+      <option name="panelWidth"  type="real" defvalue="0.2"  prompt="Ширина панели (м)"/>
+      <option name="gap"         type="real" defvalue="0.003" prompt="Зазор между панелями (м)"/>
+      <option name="startOffset" type="real" defvalue="0.05"  prompt="Смещение от начала (м)"/>
+    </group>
+  </options>
 
-		  <!-- Основная функция, вызываемая при создании панелей -->
-		  <function name="OnPlanksCreated">
-			<![CDATA[
-			  -- Получаем параметры из шаблона
-			  local len = af_request("elem_length", guidElem)
-			  local width = tonumber(settings.panelWidth)
-			  local gap = tonumber(settings.gap)
-			  local offset = tonumber(settings.startOffset)
+  <function name="OnPlanksCreated">
+    <![CDATA[
+      local len    = af_request("elem_length", guidElem)
+      local width  = tonumber(settings.panelWidth)
+      local gap    = tonumber(settings.gap)
+      local offset = tonumber(settings.startOffset)
 
-			  -- Вызываем глобальную функцию GeneratePanels
-			  local panels = GeneratePanels(len, width, gap, offset)
+      local panels = GeneratePanels(len, width, gap, offset)
+      for i, p in ipairs(panels) do
+        af_request("create_panel", {
+          guid  = guidElem,
+          x1    = p.x1,
+          x2    = p.x2,
+          layer = "boarding_ext"
+        })
+      end
+    ]]>
+  </function>
 
-			  -- Создаём панели по рассчитанным координатам
-			  for i, p in ipairs(panels) do
-				af_request("create_panel", {
-				  guid = guidElem,
-				  x1 = p.x1,
-				  x2 = p.x2,
-				  layer = "boarding_ext"
-				})
-			  end
-			]]>
-		  </function>
-		</elemtemplate>
+</elemtemplate>
+
 
 
       <elemtemplate class="layer" templateid="airstrips_hor_gable_10" templatename="Air space strips horizontal with angled parts" templatename_fin="Tuuletusrako vaaka vinoilla osilla" templatename_kor="각진 부분이 있는 환기 수평" templatename_pol="Poziome listwy wentylacyjne z ukośnymi elementami" id="[id]">
@@ -30868,4 +30863,5 @@ end
   </elem>
 
 </archiframe>
+
 
