@@ -23302,43 +23302,46 @@ height=0.173
         <cncinfo cnc_outputline="[cnc_outputline]" cnc_nailgun="[cnc_nailgun]" cnc_matindex="[cnc_matindex]" cnc_matname="[cnc_matname]" cnc_isframing="[cnc_isframing]"></cncinfo>
       </elemtemplate>
 
-<!-- Делаю шаблон -->
-<elemtemplate class="boarding" templateid="panel_with_gap" templatename="Панель с зазором" id="[id]">
+	<!-- Шаблон с параметрами для раскладки плит с зазором -->
+	<elemtemplate class="boarding" templateid="panel_with_gap" templatename="Панель с зазором" id="[id]">
 
-  <settings>
-    <panelWidth>0.2</panelWidth>
-    <gap>0.003</gap>
-    <startOffset>0.05</startOffset>
-  </settings>
+	  <settings>
+		<panelWidth>0.2</panelWidth>
+		<gap>0.003</gap>
+		<startOffset>0.05</startOffset>
+	  </settings>
 
-  <options>
-    <group name="panelLayout">
-      <option name="panelWidth"  type="real" defvalue="0.2"  prompt="Ширина панели (м)"/>
-      <option name="gap"         type="real" defvalue="0.003" prompt="Зазор между панелями (м)"/>
-      <option name="startOffset" type="real" defvalue="0.05"  prompt="Смещение от начала (м)"/>
-    </group>
-  </options>
+	  <options>
+		<group name="panelLayout">
+		  <param name="panelWidth"  type="real" defvalue="0.2"  prompt="Ширина панели (м)"/>
+		  <param name="gap"         type="real" defvalue="0.003" prompt="Зазор между панелями (м)"/>
+		  <param name="startOffset" type="real" defvalue="0.05"  prompt="Смещение от начала (м)"/>
+		</group>
+	  </options>
 
-  <function name="OnPlanksCreated">
-    <![CDATA[
-      local len    = af_request("elem_length", guidElem)
-      local width  = tonumber(settings.panelWidth)
-      local gap    = tonumber(settings.gap)
-      local offset = tonumber(settings.startOffset)
+	  <function name="OnPlanksCreated">
+		<![CDATA[
+		  local len    = af_request("elem_length", guidElem)
+		  local width  = tonumber(settings.panelWidth)
+		  local gap    = tonumber(settings.gap)
+		  local offset = tonumber(settings.startOffset)
 
-      local panels = GeneratePanels(len, width, gap, offset)
-      for i, p in ipairs(panels) do
-        af_request("create_panel", {
-          guid  = guidElem,
-          x1    = p.x1,
-          x2    = p.x2,
-          layer = "boarding_ext"
-        })
-      end
-    ]]>
-  </function>
+		  local panels = GeneratePanels(len, width, gap, offset)
+		  for i, p in ipairs(panels) do
+			af_request("create_panel", {
+			  guid  = guidElem,
+			  x1    = p.x1,
+			  x2    = p.x2,
+			  layer = "boarding_ext"
+			})
+		  end
+		]]>
+	  </function>
 
-</elemtemplate>
+	</elemtemplate>
+
+
+
 
 
 
@@ -30863,5 +30866,3 @@ end
   </elem>
 
 </archiframe>
-
-
