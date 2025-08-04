@@ -259,18 +259,6 @@ function GetTemplateFileNameInt(path, fnameNoExt, ext)
 	return templateName, res
 end
 
-	function GeneratePanels(length, panelWidth, gap, offset)
-	  local panels = {}
-	  local x = offset
-	  while x < length do
-		local x1 = x
-		local x2 = math.min(x + panelWidth, length)
-		table.insert(panels, {x1 = x1, x2 = x2})
-		x = x2 + gap
-	  end
-	  return panels
-	end
-
 
 function GetAutoTextNoNil(autoName)
 	local	s

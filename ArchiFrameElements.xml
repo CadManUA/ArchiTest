@@ -18115,58 +18115,6 @@ end
 ]]>
         </script>
 
-<!-- Добавить Lua-скрипт для хранения и диалога настроек панели -->
-<script id="panelsettings"><![CDATA[
-  -- начальные значения
-  gPanelGap    = 0.003    -- зазор между панелями, м
-  gPanelRule   = "left"   -- правило выравнивания: left, center, end
-  gPanelOffset = 0.0      -- смещение от начала, м
-
-  -- окно настроек
-  function SettingsDlg(sSettings)
-    local t = {
-      {cfgonly=0, type=3, prompt="Зазор между панелями (м)", key="panelgap",    value=gPanelGap},
-      {cfgonly=0, type=1, prompt="Выравнивание панелей", key="panelrule", valuelist="left,center,end", value=gPanelRule},
-      {cfgonly=0, type=3, prompt="Смещение от начала (м)", key="paneloffset", value=gPanelOffset},
-    }
-    local ok, err = ac_optiondlg("AF", "Настройки раскладки панелей", t)
-    if not ok then return false end
-    gPanelGap    = t[1].value
-    gPanelRule   = t[2].value
-    gPanelOffset = t[3].value
-    return true
-  end
-
-  -- сериализация настроек в строку
-  function SettingsToStr()
-    return string.format("panelgap=%0.5f\npanelrule=%s\npaneloffset=%0.5f",
-                         gPanelGap, gPanelRule, gPanelOffset)
-  end
-
-  -- парсинг ключ=значение из строковых настроек
-  local function GetVal(data, key)
-    for k,v in string.gmatch(data, "([^ \r\n]+)=([^\r\n]+)") do
-      if k == key then return v end
-    end
-  end
-
-  function ParseSettings(sSettings)
-    if not sSettings or sSettings=="" then return end
-    gPanelGap    = tonumber(GetVal(sSettings, "panelgap"))    or gPanelGap
-    gPanelRule   =       GetVal(sSettings, "panelrule")      or gPanelRule
-    gPanelOffset = tonumber(GetVal(sSettings, "paneloffset")) or gPanelOffset
-  end
-
-  -- общий хук, вызываемый движком
-  function Settings(sSettings)
-    ParseSettings(sSettings)
-    if not SettingsDlg(sSettings) then return end
-    return SettingsToStr()
-  end
-]]></script>
-
-
-
         <script id="autocuttopbot">
           <![CDATA[
 -- For planks to be created
@@ -23302,47 +23250,6 @@ height=0.173
         <cncinfo cnc_outputline="[cnc_outputline]" cnc_nailgun="[cnc_nailgun]" cnc_matindex="[cnc_matindex]" cnc_matname="[cnc_matname]" cnc_isframing="[cnc_isframing]"></cncinfo>
       </elemtemplate>
 
-	<!-- Шаблон с параметрами для раскладки плит с зазором -->
-	<elemtemplate class="boarding" templateid="panel_with_gap" templatename="Панель с зазором" id="[id]">
-
-	  <settings>
-		<panelWidth>0.2</panelWidth>
-		<gap>0.003</gap>
-		<startOffset>0.05</startOffset>
-	  </settings>
-
-	  <options>
-		<param name="panelWidth"  type="real" defvalue="1.2"  prompt="Ширина панели (м)"/>
-		<param name="gap"         type="real" defvalue="0.003" prompt="Зазор между панелями (м)"/>
-		<param name="startOffset" type="real" defvalue="0.05"  prompt="Смещение от начала (м)"/>
-	  </options>
-
-	  <function name="OnPlanksCreated">
-		<![CDATA[
-		  local len    = af_request("elem_length", guidElem)
-		  local width  = tonumber(settings.panelWidth)
-		  local gap    = tonumber(settings.gap)
-		  local offset = tonumber(settings.startOffset)
-
-		  local panels = GeneratePanels(len, width, gap, offset)
-		  for i, p in ipairs(panels) do
-			af_request("create_panel", {
-			  guid  = guidElem,
-			  x1    = p.x1,
-			  x2    = p.x2,
-			  layer = "boarding_ext"
-			})
-		  end
-		]]>
-	  </function>
-
-	</elemtemplate>
-
-
-
-
-
-
 
       <elemtemplate class="layer" templateid="airstrips_hor_gable_10" templatename="Air space strips horizontal with angled parts" templatename_fin="Tuuletusrako vaaka vinoilla osilla" templatename_kor="각진 부분이 있는 환기 수평" templatename_pol="Poziome listwy wentylacyjne z ukośnymi elementami" id="[id]">
         <settings>
@@ -28317,11 +28224,6 @@ end
         <script ref="elemsettings">
         </script>
       </option>
-		<option groupid="settings" id="panelsettings" name="Panel layout" name_fin="Paneeliasettelu" name_pol="Układ paneli">
-		  <script ref="panelsettings">
-		  </script>
-		</option>
-
     </options>
 
 
