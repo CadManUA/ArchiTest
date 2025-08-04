@@ -23312,11 +23312,9 @@ height=0.173
 	  </settings>
 
 	  <options>
-		<group name="panelLayout">
-		  <param name="panelWidth"  type="real" defvalue="0.2"  prompt="Ширина панели (м)"/>
-		  <param name="gap"         type="real" defvalue="0.003" prompt="Зазор между панелями (м)"/>
-		  <param name="startOffset" type="real" defvalue="0.05"  prompt="Смещение от начала (м)"/>
-		</group>
+		<param name="panelWidth"  type="real" defvalue="1.2"  prompt="Ширина панели (м)"/>
+		<param name="gap"         type="real" defvalue="0.003" prompt="Зазор между панелями (м)"/>
+		<param name="startOffset" type="real" defvalue="0.05"  prompt="Смещение от начала (м)"/>
 	  </options>
 
 	  <function name="OnPlanksCreated">
@@ -23339,10 +23337,6 @@ height=0.173
 	  </function>
 
 	</elemtemplate>
-
-
-
-
 
 
       <elemtemplate class="layer" templateid="airstrips_hor_gable_10" templatename="Air space strips horizontal with angled parts" templatename_fin="Tuuletusrako vaaka vinoilla osilla" templatename_kor="각진 부분이 있는 환기 수평" templatename_pol="Poziome listwy wentylacyjne z ukośnymi elementami" id="[id]">
@@ -30866,3 +30860,4 @@ end
   </elem>
 
 </archiframe>
+
