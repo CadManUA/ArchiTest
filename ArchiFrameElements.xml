@@ -17740,99 +17740,107 @@ function SettingsDlg(sSettings)
     strSep=","
   end
     
-  tblSettings={}
-  tblSettings={}
-  tblSettings[1]      ={}
-  tblSettings[1].cfgonly  =0
-  tblSettings[1].type    =1
-  tblSettings[1].prompt  =strMat
-  tblSettings[1].key    ="balkmat"
-  tblSettings[1].valuelist=s
-  tblSettings[1].value  =defMat
+	  tblSettings={}
+	  tblSettings={}
+	  tblSettings[1]      ={}
+	  tblSettings[1].cfgonly  =0
+	  tblSettings[1].type    =1
+	  tblSettings[1].prompt  =strMat
+	  tblSettings[1].key    ="balkmat"
+	  tblSettings[1].valuelist=s
+	  tblSettings[1].value  =defMat
 
-  tblSettings[2]      ={}
-  tblSettings[2].cfgonly  =0
-  tblSettings[2].type    =3
-  tblSettings[2].prompt  =strThickness
-  tblSettings[2].key    ="thickness"
-  tblSettings[2].defvalue  =g_thickness
+	  tblSettings[2]      ={}
+	  tblSettings[2].cfgonly  =0
+	  tblSettings[2].type    =3
+	  tblSettings[2].prompt  =strThickness
+	  tblSettings[2].key    ="thickness"
+	  tblSettings[2].defvalue  =g_thickness
 
-  tblSettings[3]      ={}
-  tblSettings[3].cfgonly  =0
-  tblSettings[3].type    =3
-  tblSettings[3].prompt  =strHeight
-  tblSettings[3].key    ="height"
-  tblSettings[3].defvalue  =g_height
+	  tblSettings[3]      ={}
+	  tblSettings[3].cfgonly  =0
+	  tblSettings[3].type    =3
+	  tblSettings[3].prompt  =strHeight
+	  tblSettings[3].key    ="height"
+	  tblSettings[3].defvalue  =g_height
 
-  tblSettings[4]      ={}
-  tblSettings[4].cfgonly  =0
-  tblSettings[4].type    =4
-  tblSettings[4].prompt  =strRotNog
-  tblSettings[4].key    ="rot"
-  tblSettings[4].defvalue  =g_rotdeg
+	  tblSettings[4]      ={}
+	  tblSettings[4].cfgonly  =0
+	  tblSettings[4].type    =4
+	  tblSettings[4].prompt  =strRotNog
+	  tblSettings[4].key    ="rot"
+	  tblSettings[4].defvalue  =g_rotdeg
 
-  tblSettings[5]      ={}
-  tblSettings[5].cfgonly  =0
-  tblSettings[5].type    =2
-  tblSettings[5].prompt  =strNogSide
-  tblSettings[5].key    ="front"
-  tblSettings[5].defvalue  =g_front
+	  tblSettings[5]      ={}
+	  tblSettings[5].cfgonly  =0
+	  tblSettings[5].type    =2
+	  tblSettings[5].prompt  =strNogSide
+	  tblSettings[5].key    ="front"
+	  tblSettings[5].defvalue  =g_front
 
-  tblSettings[6]      ={}
-  tblSettings[6].cfgonly  =0
-  tblSettings[6].type    =3
-  tblSettings[6].prompt  =strStaggering
-  tblSettings[6].key    ="stagger"
-  tblSettings[6].defvalue  =g_stagger
+	  tblSettings[6]      ={}
+	  tblSettings[6].cfgonly  =0
+	  tblSettings[6].type    =3
+	  tblSettings[6].prompt  =strStaggering
+	  tblSettings[6].key    ="stagger"
+	  tblSettings[6].defvalue  =g_stagger
 
-  tblSettings[7]      ={}
-  tblSettings[7].cfgonly  =0
-  tblSettings[7].type    =3
-  tblSettings[7].prompt  =strSpacing
-  tblSettings[7].key    ="spacing"
-  tblSettings[7].defvalue  =g_spacing
+	  tblSettings[7]      ={}
+	  tblSettings[7].cfgonly  =0
+	  tblSettings[7].type    =3
+	  tblSettings[7].prompt  =strSpacing
+	  tblSettings[7].key    ="spacing"
+	  tblSettings[7].defvalue  =g_spacing
 
-  tblSettings[8]      ={}
-  tblSettings[8].cfgonly  =0
-  tblSettings[8].type    =2
-  tblSettings[8].prompt  =strSingleLine
-  tblSettings[8].key    ="single"
-  tblSettings[8].defvalue  =g_single
+	  tblSettings[8]      ={}
+	  tblSettings[8].cfgonly  =0
+	  tblSettings[8].type    =2
+	  tblSettings[8].prompt  =strSingleLine
+	  tblSettings[8].key    ="single"
+	  tblSettings[8].defvalue  =g_single
+	  
+	  tblSettings[9]      ={}
+	  tblSettings[9].cfgonly  =0
+	  tblSettings[9].type    =2
+	  tblSettings[9].prompt  =strBot
+	  tblSettings[9].key    ="bot"
+	  tblSettings[9].defvalue  =g_bot
+	  
+	  tblSettings[10]      ={}
+	  tblSettings[10].cfgonly  =0
+	  tblSettings[10].type    =2
+	  tblSettings[10].prompt  =strTop
+	  tblSettings[10].key    ="top"
+	  tblSettings[10].defvalue  =g_top
+	  
+	  tblSettings[11]      ={}
+	  tblSettings[11].cfgonly  =0
+	  tblSettings[11].type    =3
+	  tblSettings[11].prompt  =strGap
+	  tblSettings[11].key    ="nogging_gap"
+	  tblSettings[11].defvalue  =0
+
+	  tblSettings[12]      ={}
+	  tblSettings[12].cfgonly  =0
+	  tblSettings[12].type    =4
+	  tblSettings[12].prompt  =strNth
+	  tblSettings[12].key    ="everynth"
+	  tblSettings[12].defvalue  =1
+
+	  tblSettings[13]      ={}
+	  tblSettings[13].cfgonly  =0
+	  tblSettings[13].type    =3
+	  tblSettings[13].prompt  =strZoff
+	  tblSettings[13].key    ="zoff"
+	  tblSettings[13].defvalue  =0
   
-  tblSettings[9]      ={}
-  tblSettings[9].cfgonly  =0
-  tblSettings[9].type    =2
-  tblSettings[9].prompt  =strBot
-  tblSettings[9].key    ="bot"
-  tblSettings[9].defvalue  =g_bot
-  
-  tblSettings[10]      ={}
-  tblSettings[10].cfgonly  =0
-  tblSettings[10].type    =2
-  tblSettings[10].prompt  =strTop
-  tblSettings[10].key    ="top"
-  tblSettings[10].defvalue  =g_top
-  
-  tblSettings[11]      ={}
-  tblSettings[11].cfgonly  =0
-  tblSettings[11].type    =3
-  tblSettings[11].prompt  =strGap
-  tblSettings[11].key    ="nogging_gap"
-  tblSettings[11].defvalue  =0
+	tblSettings[14] = {}
+	tblSettings[14].cfgonly = 0
+	tblSettings[14].type = 3
+	tblSettings[14].prompt = "Board gap:"
+	tblSettings[14].key = "boardgap"
+	tblSettings[14].defvalue = g_boardgap
 
-  tblSettings[12]      ={}
-  tblSettings[12].cfgonly  =0
-  tblSettings[12].type    =4
-  tblSettings[12].prompt  =strNth
-  tblSettings[12].key    ="everynth"
-  tblSettings[12].defvalue  =1
-
-  tblSettings[13]      ={}
-  tblSettings[13].cfgonly  =0
-  tblSettings[13].type    =3
-  tblSettings[13].prompt  =strZoff
-  tblSettings[13].key    ="zoff"
-  tblSettings[13].defvalue  =0
 
   -- Show current settings always (also from defaults)
   for i=1,#tblSorted do
@@ -17854,7 +17862,8 @@ function SettingsDlg(sSettings)
   tblSettings[11].value   =g_noggingsGap
   tblSettings[12].value   =g_everynth
   tblSettings[13].value   =g_zoff
- 
+  tblSettings[14].value = g_boardgap
+
   bRes,sErr=ac_optiondlg("LDNO", strTitle, tblSettings)
   if not bRes then
     return false
@@ -17877,6 +17886,7 @@ function SettingsDlg(sSettings)
 	  g_everynth=1
 	end
   g_zoff=tblSettings[13].value
+  g_zoff=tblSettings[14].value
 
   return true
 end
@@ -17980,7 +17990,7 @@ end
 -- All settings are saved as strings
 gSpacing=0.6
 gStacking=0.0
-
+g_boardgap=0.003
 
 -- Returns: -1=Not known/no planks, 0=nope, 1=has
 function Has()
@@ -18028,20 +18038,27 @@ function SettingsDlg(sSettings)
     pcall(ParseSettings, sSettings)
   end
   
-  tblSettings={}
-  tblSettings[1]			={}
-  tblSettings[1].cfgonly	=0
-  tblSettings[1].type		=3
-  tblSettings[1].prompt	=strSpacing
-  tblSettings[1].key		="spacing"
-  tblSettings[1].value	=gSpacing
+	tblSettings={}
+	tblSettings[1]				={}
+	tblSettings[1].cfgonly		=0
+	tblSettings[1].type			=3
+	tblSettings[1].prompt		=strSpacing
+	tblSettings[1].key			="spacing"
+	tblSettings[1].value		=gSpacing
 
-  tblSettings[2]			={}
-  tblSettings[2].cfgonly	=0
-  tblSettings[2].type		=3
-  tblSettings[2].prompt	=strStackingOff
-  tblSettings[2].key		="stackingoffset"
-  tblSettings[2].value	=gStacking
+	tblSettings[2]				={}
+	tblSettings[2].cfgonly		=0
+	tblSettings[2].type			=3
+	tblSettings[2].prompt		=strStackingOff
+	tblSettings[2].key			="stackingoffset"
+	tblSettings[2].value		=gStacking
+
+	tblSettings[3] = {}
+	tblSettings[3].cfgonly		=0
+	tblSettings[3].type			=3
+	tblSettings[3].prompt		="Board gap:"
+	tblSettings[3].key			="boardgap"
+	tblSettings[3].defvalue		=g_boardgap
 
   gHelpAnchor="afdlgelemsettings"
   bRes,sErr=ac_optiondlg("LDES", strTitle, tblSettings)
