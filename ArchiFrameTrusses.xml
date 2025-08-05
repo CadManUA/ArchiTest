@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- ArchiFrame settings for trusses -->
+<archiframe>
+  <!-- Settings for elements -->
+  <truss>
+    <settings>
+      <!-- Settings for new truss object -->
+      <newtruss>
+        <elemparam name="pen">1</elemparam>
+        <objparam name="iShowID">1</objparam>
+        <objparam name="iShowID3D">1</objparam>
+      </newtruss>
+
+      <!-- These are taken every time truss palette is opened -->
+      <defaults pencontour="1" linecontour="*Dot*Dashed*" penmid="0" linemid="*Dot*Dashed">
+      </defaults>
+    </settings>
+
+    <!-- SETTINGS FOR TRUSS DRAWINGS 1/2020 -->
+    <dimdrawings>
+      <dimdrawing id="dim_1_default" name="Default style" name_fin="Oletustyyli">
+        <!-- For the related ArchiFramePrintFrame-object -->
+        <!-- Marginals are distances to truss object ignoring any dimension line, they must fit into given marginals -->
+        <printframe marginleft="1.0" marginright="1.2" margintop="1" marginbottom="1">
+          <layer></layer>
+          <elemparam name="pen">1</elemparam>
+          <objparam name="framepen">1</objparam>
+        </printframe>
+
+        <!-- Dimension line defaults -->
+        <dimlinesettings>
+          <!-- Default comes from truss tool layer setting, empty is skipped -->
+          <layer></layer>
+          <elemparam name="dimensiontype">linear</elemparam>
+          <elemparam name="pen">1</elemparam>
+          <elemparam name="fontname">Arial</elemparam>
+          <elemparam name="fontsize">1.5</elemparam>
+          <elemparam name="fontstyle"></elemparam>
+          <elemparam name="markersize">2</elemparam>
+          <elemparam name="markerpen">1</elemparam>
+          <elemparam name="witness">1</elemparam>
+        </dimlinesettings>
+
+        <createdims>
+          <!-- Pystyssä oleva mitta 4732 -->
+          <dimheightleft margin="0.6" create="1">
+            <dimlinesettings>
+              <elemparam name="fontsize">1.5</elemparam>
+            </dimlinesettings>
+          </dimheightleft>
+
+          <dimheightright margin="0.6" create="1">
+            <dimlinesettings>
+              <elemparam name="fontsize">1.5</elemparam>
+            </dimlinesettings>
+          </dimheightright>
+
+          <!-- Jos se tukikorkeuspiste löytyy niin se lisänä: Pystymitta 922, 3810 -->
+          <dimheightsupportleft margin="0.4" create="1">
+          </dimheightsupportleft>
+
+          <dimheightsupportright margin="0.4" create="1">
+          </dimheightsupportright>
+
+          <!-- Speksin kuvassa yläreunan mitat 4721 vasen ja oikea yhteen mittaviivaan, tää on aina vaakasuorassa -->
+          <dimridgetop margin="0.3" create="1">
+            <dimlinesettings>
+              <elemparam name="fontsize">1.5</elemparam>
+            </dimlinesettings>
+          </dimridgetop>
+
+          <!-- alin mitta, 911, 7620, 911 -->
+          <dimbottom margin="0.5" create="1">
+          </dimbottom>
+
+          <!-- For tilted top, 6677 -->
+          <dimtoptilted margin="0.2" create="1">
+          </dimtoptilted>
+
+          <!-- Tulee keskelle polygonista löydettyä ristikon yläpaarretta, kuvassa 148 (eikä margin-asetukselle ole käyttöä) -->
+          <dimrafterheighend create="1">
+          </dimrafterheighend>
+
+          <!-- Tulee keskelle polygonista löydettyä ristikon yläpaarretta, kuvassa 396 (eikä margin-asetukselle ole käyttöä) -->
+          <dimrafterheighmid create="1">
+          </dimrafterheighmid>
+
+          <!-- Käyttöullakko, tässä onkin hankaluus määritellä, tää tuleekin kuvasta poiketen näillä asetuksilla polygonin reikään, se on ok, kuvassa 1869 -->
+          <dimtiltedattic margin="0.2" create="1">
+          </dimtiltedattic>
+
+          <!-- Attic space top hor, kuvassa 2764 -->
+          <dimttopdattic margin="0.2" create="1">
+          </dimttopdattic>
+
+          <!-- Attic space bottom hor, kuvassa 5407 250 mm lisiä ei voi mistään tietää -->
+          <dimtbottomdattic margin="0.2" create="1">
+          </dimtbottomdattic>
+
+          <dimbeamcutheight create="1">
+          </dimbeamcutheight>
+
+          <dimbeamcutwidth create="1">
+          </dimbeamcutwidth>
+
+          <dimtrussheight create="1">
+          </dimtrussheight>"
+
+          <dimsupport margin="0.1" create="1">
+            <dimlinesettings>
+            </dimlinesettings>
+            <text content="SUPP C/C" content_fin="TUKI K/K" textid="1" anchor="6" marg="0.2">
+              <elemparam name="pen">1</elemparam>
+              <elemparam name="fontname">arial</elemparam>
+              <elemparam name="fontsize">1.5</elemparam>
+              <elemparam name="fontstyle"></elemparam>
+            </text>
+          </dimsupport>
+        </createdims>
+
+        <text anchorframe="7" x="0.05" y="0.0" content="TRUSS #id# #count# pcs #editstatus#" content_fin="RISTIKKO #id# #count# kpl #editstatus#" anchor="7" update="1">
+          <elemparam name="pen">1</elemparam>
+          <elemparam name="fontname">arial</elemparam>
+          <elemparam name="fontsize">4</elemparam>
+          <elemparam name="fontstyle">bold</elemparam>
+        </text>
+      </dimdrawing>
+
+
+      <dimdrawing id="dim_2_thick" name="Thick dimension lines" name_fin="Paksut mittaviivat">
+        <!-- For the related ArchiFramePrintFrame-object -->
+        <!-- Marginals are distances to truss object ignoring any dimension line, they must fit into given marginals -->
+        <printframe marginleft="1.0" marginright="1.2" margintop="1" marginbottom="1">
+          <layer></layer>
+          <elemparam name="pen">1</elemparam>
+          <objparam name="framepen">1</objparam>
+        </printframe>
+
+        <!-- Dimension line defaults -->
+        <dimlinesettings>
+          <!-- Default comes from truss tool layer setting, empty is skipped -->
+          <layer></layer>
+          <elemparam name="dimensiontype">linear</elemparam>
+          <elemparam name="pen">1</elemparam>
+          <elemparam name="fontname">Arial</elemparam>
+          <elemparam name="fontsize">2.5</elemparam>
+          <elemparam name="fontstyle"></elemparam>
+          <elemparam name="markersize">4</elemparam>
+          <elemparam name="markerpen">1</elemparam>
+          <elemparam name="markersize">5</elemparam>
+          <elemparam name="witness">1</elemparam>
+        </dimlinesettings>
+
+        <createdims>
+          <!-- Pystyssä oleva mitta 4732 -->
+          <dimheightleft margin="0.6" create="1">
+            <dimlinesettings>
+              <elemparam name="fontsize">2.5</elemparam>
+            </dimlinesettings>
+          </dimheightleft>
+
+          <dimheightright margin="0.6" create="1">
+            <dimlinesettings>
+              <elemparam name="fontsize">2.5</elemparam>
+            </dimlinesettings>
+          </dimheightright>
+
+          <!-- Jos se tukikorkeuspiste löytyy niin se lisänä: Pystymitta 922, 3810 -->
+          <dimheightsupportleft margin="0.4" create="1">
+          </dimheightsupportleft>
+
+          <dimheightsupportright margin="0.4" create="1">
+          </dimheightsupportright>
+
+          <!-- Speksin kuvassa yläreunan mitat 4721 vasen ja oikea yhteen mittaviivaan, tää on aina vaakasuorassa -->
+          <dimridgetop margin="0.3" create="1">
+            <dimlinesettings>
+              <elemparam name="fontsize">2.5</elemparam>
+            </dimlinesettings>
+          </dimridgetop>
+
+          <!-- alin mitta, 911, 7620, 911 -->
+          <dimbottom margin="0.5" create="1">
+          </dimbottom>
+
+          <!-- For tilted top, 6677 -->
+          <dimtoptilted margin="0.2" create="1">
+          </dimtoptilted>
+
+          <!-- Tulee keskelle polygonista löydettyä ristikon yläpaarretta, kuvassa 148 (eikä margin-asetukselle ole käyttöä) -->
+          <dimrafterheighend create="1">
+          </dimrafterheighend>
+
+          <!-- Tulee keskelle polygonista löydettyä ristikon yläpaarretta, kuvassa 396 (eikä margin-asetukselle ole käyttöä) -->
+          <dimrafterheighmid create="1">
+          </dimrafterheighmid>
+
+          <!-- Käyttöullakko, tässä onkin hankaluus määritellä, tää tuleekin kuvasta poiketen näillä asetuksilla polygonin reikään, se on ok, kuvassa 1869 -->
+          <dimtiltedattic margin="0.2" create="1">
+          </dimtiltedattic>
+
+          <!-- Attic space top hor, kuvassa 2764 -->
+          <dimttopdattic margin="0.2" create="1">
+          </dimttopdattic>
+
+          <!-- Attic space bottom hor, kuvassa 5407 250 mm lisiä ei voi mistään tietää -->
+          <dimtbottomdattic margin="0.2" create="1">
+          </dimtbottomdattic>
+
+          <dimbeamcutheight create="1">
+          </dimbeamcutheight>
+
+          <dimbeamcutwidth create="1">
+          </dimbeamcutwidth>
+
+          <dimtrussheight create="1">
+          </dimtrussheight>"
+
+          <dimsupport margin="0.1" create="1">
+            <dimlinesettings>
+            </dimlinesettings>
+            <text content="SUPP C/C" content_fin="TUKI K/K" textid="1" anchor="6" marg="0.2">
+              <elemparam name="pen">1</elemparam>
+              <elemparam name="fontname">arial</elemparam>
+              <elemparam name="fontsize">1.5</elemparam>
+              <elemparam name="fontstyle"></elemparam>
+            </text>
+          </dimsupport>
+        </createdims>
+
+        <text anchorframe="7" x="0.05" y="0.0" content="TRUSS #id# #count# pcs #editstatus#" content_fin="RISTIKKO #id# #count# kpl #editstatus#" anchor="7" update="1">
+          <elemparam name="pen">1</elemparam>
+          <elemparam name="fontname">arial</elemparam>
+          <elemparam name="fontsize">4</elemparam>
+          <elemparam name="fontstyle">bold</elemparam>
+        </text>
+      </dimdrawing>
+
+    </dimdrawings>
+
+  </truss>
+</archiframe>
